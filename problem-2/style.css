@@ -1,0 +1,28 @@
+body{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.column {
+    display: inline-block;
+    width: 30%;
+}
+
+.countdown-timer input[type=number] {
+    width: 50px;
+    height: 40px;
+}
+
+
+.countdown-timer{
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgb(207, 207, 207);
+    width: 20%;
+    padding: 2%;
+}
+
+button{
+    text-transform: uppercase;
+    padding: 8px 16px;
+}
