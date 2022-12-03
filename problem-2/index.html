@@ -6,14 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/rxjs@7.5.7/dist/bundles/rxjs.umd.min.js"></script>
 </head>
 <body>
     <h2>Countdown Timer</h2>
     <div class="countdown-timer">
-        <input type="number" placeholder="h" name="hours"/>:
-        <input type="number" placeholder="m" name="minutes"/>:
-        <input type="number" placeholder="s" name="seconds"/><br><br>
-        <button>Start Countdown</button>
+        <form id = "countdownForm">
+            <input type="number" placeholder="h" id="hours"/>:
+            <input type="number" placeholder="m" id="minutes"/>:
+            <input type="number" placeholder="s" id="seconds"/><br><br>
+        </form>
+        <button id="startCountdownButton" >Start Countdown</button>
+        <div id="countdown"></div>
     </div>
+    <script src="app.js"></script>
 </body>
 </html>

@@ -26,3 +26,8 @@ button{
     text-transform: uppercase;
     padding: 8px 16px;
 }
+
+#countdownDiv{
+    font-size: 20px;
+    padding: 2%;
+}
