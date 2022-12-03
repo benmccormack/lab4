@@ -10,7 +10,7 @@ Stream abstraction refers to how a stream can be present unlike an array for dat
 
 The RxJS library could be used to handle asynchronous network responses to API requests through the use of obervables, operators and observers. This would allow for requests coming in to be processed and have the required operations completed on them and then be sent to the observer. This would involve the use of the pipe operator and also the map operator. The data would go from the Observable, to the pipe where the operators would be called and then the output would be sent to the observer.
 
-RxJS may be prefered over promises because an RxJS obervable can handle multiple events at a time, this is not something that promises are capable of doing. Call failures can also be handled using the RxJS library. Speed is another thing that could be a benefit of using the RxJS library over promises as the Observer will be called into action as soon as the observable has completed its relevant operations.
+RxJS may be prefered over promises because an RxJS obervable can handle multiple events at a time, this is not something that promises are capable of doing. Call failures can also be handled using the RxJS library. Speed is another thing that could be a benefit of using the RxJS library over promises as the Observer will be called into action as soon as the observable has completed its relevant operations. RxJS also allows for the creation of HTTP requests.
 
 A potential downside to using the RxJS library is the extra code that would have to be written in comparison to promises. The RxJS library also has a steep learning curve and is not as straightforward as using promises.
 

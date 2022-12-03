@@ -38,9 +38,10 @@ function startTimer(hours, minutes, seconds){
     let timeRemaining = total;
     
     // observable is called every second
-    const observable = interval(1000);
+    let observable = Observable;
+    observable = interval(1000);
  
-    observable
+    observable 
         .subscribe(x => {
             if(timeRemaining == 0){
                 // form is reset when timer expires and the countdown has finished message is dispalyed.
