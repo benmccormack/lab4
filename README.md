@@ -12,6 +12,10 @@ The RxJS library could be used to handle asynchronous network responses to API r
 
 RxJS may be prefered over promises because an RxJS obervable can handle multiple events at a time, this is not something that promises are capable of doing. Call failures can also be handled using the RxJS library. Speed is another thing that could be a benefit of using the RxJS library over promises as the Observer will be called into action as soon as the observable has completed its relevant operations.
 
-A potential downside to using the RxJS library is the extra code that would have to be written in comparison to promises. The RxJS library also has a steep learning curve and is not as straightforward as promises.
+A potential downside to using the RxJS library is the extra code that would have to be written in comparison to promises. The RxJS library also has a steep learning curve and is not as straightforward as using promises.
 
 **Q3) Consider three asynchronous tasks, A,B & C. What are the consequences of these functions sharing global state? What is a good practice to alleviate any problems associated with this?**
+
+The sharing of a global state can cause a number of issues. Results could be different in each of the functions but some functions may see their state change while another function remains as it was before the change was made.
+
+Good practice and a potential solution would be to implement the code in a way that there is no global state but the state of one function is passed to the other function by means of a function call with the state of the current function put into the function calls parameters. This can also handle the issue of one function being called before another and changing the state incorrectly. If implemented in the suggested manner the execution of function A would lead to function B being called and then function C being called with the relevant state and variables being passed to each of the functions.
