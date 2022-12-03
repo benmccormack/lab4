@@ -26,11 +26,15 @@ function getTime(){
 
 // start timer function
 function startTimer(hours, minutes, seconds){
+    // everything has to be converted to seconds and added
     let hoursInSeconds = hours*3600;
     let minutesInSeconds = minutes*60;
     seondsInSeconds = seconds*1;
+
+    //getting total number of seconds
     total = hoursInSeconds+minutesInSeconds+seondsInSeconds;
     
+    // the time remaining is set to the total time
     let timeRemaining = total;
     
     // observable is called every second
@@ -39,6 +43,7 @@ function startTimer(hours, minutes, seconds){
     observable
         .subscribe(x => {
             if(timeRemaining == 0){
+                // form is reset when timer expires and the countdown has finished message is dispalyed.
                 countdownForm.reset();
                 countdownDiv.innerHTML = "Countdown has finished."
                 return;
@@ -46,7 +51,6 @@ function startTimer(hours, minutes, seconds){
                 if(timeRemaining > 0){
                     timeRemaining = timeRemaining - 1;
                     // calling function to display the time remaining
-                    countdownDiv.style.display = '';
                     showTimeRemaining(timeRemaining);
                 } 
             }
@@ -54,13 +58,12 @@ function startTimer(hours, minutes, seconds){
 
 }
 
-
 // function to display the time remaining in hours, minutes and seconds.
 function showTimeRemaining(timeRemaining){
     // time remaining needs to be divided up into hours minutes and seconds - floor rounds down to nearest integer
     hours = Math.floor(timeRemaining/3600); 
     minutes = Math.floor(timeRemaining % 3600 / 60);
     seconds = Math.floor(timeRemaining % 3600 % 60);
-
+    // setting the inner HTML of the countdown div to be that of the current time remaining in hours minutes and seconds
     countdownDiv.innerHTML = hours + 'h ' + minutes +'m ' + seconds +'s '; 
 }
