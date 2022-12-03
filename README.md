@@ -8,4 +8,10 @@ Stream abstraction refers to how a stream can be present unlike an array for dat
 
 **Q2) Assume that you are building an interface to an API in your Rich Web App. Describe in detail how you could use the RxJS library to handle asynchronous network responses to API requests. In your opinion, what are the benefits to using a streams library for networking over, say, promises? And what do you think are the downsides?**
 
+The RxJS library could be used to handle asynchronous network responses to API requests through the use of obervables, operators and observers. This would allow for requests coming in to be processed and have the required operations completed on them and then be sent to the observer. This would involve the use of the pipe operator and also the map operator. The data would go from the Observable, to the pipe where the operators would be called and then the output would be sent to the observer.
+
+RxJS may be prefered over promises because an RxJS obervable can handle multiple events at a time, this is not something that promises are capable of doing. Call failures can also be handled using the RxJS library. Speed is another thing that could be a benefit of using the RxJS library over promises as the Observer will be called into action as soon as the observable has completed its relevant operations.
+
+A potential downside to using the RxJS library is the extra code that would have to be written in comparison to promises. The RxJS library also has a steep learning curve and is not as straightforward as promises.
+
 **Q3) Consider three asynchronous tasks, A,B & C. What are the consequences of these functions sharing global state? What is a good practice to alleviate any problems associated with this?**
