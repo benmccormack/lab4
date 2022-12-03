@@ -23,3 +23,44 @@ function getTime(){
 
     startTimer(hours, minutes, seconds);
 }
+
+// start timer function
+function startTimer(hours, minutes, seconds){
+    let hoursInSeconds = hours*3600;
+    let minutesInSeconds = minutes*60;
+    seondsInSeconds = seconds*1;
+    total = hoursInSeconds+minutesInSeconds+seondsInSeconds;
+    
+    let timeRemaining = total;
+    
+    // observable is called every second
+    const observable = interval(1000);
+ 
+    observable
+        .subscribe(x => {
+            if(timeRemaining == 0){
+                countdownForm.reset();
+                countdownDiv.innerHTML = "Countdown has finished."
+                return;
+            }else{
+                if(timeRemaining > 0){
+                    timeRemaining = timeRemaining - 1;
+                    // calling function to display the time remaining
+                    countdownDiv.style.display = '';
+                    showTimeRemaining(timeRemaining);
+                } 
+            }
+        });
+
+}
+
+
+// function to display the time remaining in hours, minutes and seconds.
+function showTimeRemaining(timeRemaining){
+    // time remaining needs to be divided up into hours minutes and seconds - floor rounds down to nearest integer
+    hours = Math.floor(timeRemaining/3600); 
+    minutes = Math.floor(timeRemaining % 3600 / 60);
+    seconds = Math.floor(timeRemaining % 3600 % 60);
+
+    countdownDiv.innerHTML = hours + 'h ' + minutes +'m ' + seconds +'s '; 
+}
